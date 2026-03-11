@@ -1,0 +1,10 @@
+services:
+  web:
+    build: .
+    # Comando para rodar o servidor e garantir que o Django aceite conexões externas
+    command: python manage.py runserver 127.0.0.1:8000
+    volumes:
+      - .:/somdiabetes
+    ports:
+      - "8000:8000"
+    # Não precisamos mais de links ou dependências de outros serviços
